@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container">
+        <form action="/getChar" method="POST">
+            <select class="form-control selectpicker"  id='char' name='char'>
+                {% for char in charList:%}
+                    <option value="{{char}}">{{char}}</option>
+                {%endfor%}
+            </select>
+
+            <button class="form-inline btn btn-success" type="submit">Add Char</button>
+            
+        </form>
+        <form action="/removeChar" method="POST">
+            <button  class="btn btn-danger"type="submit">Remove Char</button>
+        </form>
+    
+    <h2 class="">{{mStr}}</h2>
+
+    <div class="form-group">
+        <table class="table table-striped">
+        {% for movie in mlist: %}
+            <tr>
+                <td class="text-center">
+                    <form action="/movie" method="POST">
+                        <button class="form-group btn btn-info"type="submit" name ="mv" id="mv" value="{{movie}}">{{movie}}</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    </div>
+{% endblock %}

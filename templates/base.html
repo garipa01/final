@@ -1,0 +1,21 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{super()}}
+  <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+
+{% block navbar %}
+<div class="container">
+    <nav class="navbar navbar-dark bg-primary">
+        <span class="navbar-brand">Movie Information Finder</span>
+    </nav>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    Error! Something went wrong!!!!!
+</div>
+{% endblock %}

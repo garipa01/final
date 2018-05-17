@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <div class="container">
+    <h2>{{movie}}</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr><td>Index</td><td>Movie</td><td>Year</td><td>Name</td><td>Role</td><td>Character Name</td></tr>
+        </thead>
+        <tbody>
+            {% for act in actors:%}
+                <tr>
+                    {% for part in act:%}
+                        <td>{{part}}</td>
+                    {%endfor%}
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    </div>
+{% endblock%}
