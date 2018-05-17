@@ -7,7 +7,7 @@ app = Flask(__name__)
 Bootstrap(app)
 
 
-conn = psycopg2.connect("postgresql://garipa01:@knuth.luther.edu/movies")
+movies = psycopg2.connect("postgresql://garipa01:@knuth.luther.edu/movies")
 cur = movies.cursor()
 movieObj = movie.Movie()
 
